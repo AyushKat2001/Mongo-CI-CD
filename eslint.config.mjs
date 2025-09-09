@@ -1,19 +1,19 @@
 import js from "@eslint/js";
+import globals from "globals";
 
 export default [
   js.configs.recommended,
   {
     languageOptions: {
       ecmaVersion: "latest",
-      sourceType: "module",
+      sourceType: "commonjs", // ✅ you’re using require/module.exports
       globals: {
-        node: true,
-        es2021: true,
-        jest: true, // ✅ so describe, it, expect don’t throw errors
+        ...globals.node,   // ✅ adds require, module, process, console
+        ...globals.jest,   // ✅ adds describe, it, expect, beforeAll, afterAll
       },
     },
     rules: {
-      // You can add custom ESLint rules here
+      // add custom rules if needed
     },
   },
 ];
