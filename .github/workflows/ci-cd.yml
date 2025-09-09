@@ -14,7 +14,8 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                 node-version: "18"
-            - run: npm install
+            - run: npm ci
+            - run: chmod +x ./node_modules/.bin/eslint
             - run: npm run lint
     
     test:
