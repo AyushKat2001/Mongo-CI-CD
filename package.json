@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "test": "jest",
-    "lint": "eslint .",
+    "lint": "npx eslint .",
     "build": "echo 'Simulating build step'"
   },
   "keywords": [],
